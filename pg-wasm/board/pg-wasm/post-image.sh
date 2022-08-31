@@ -1,0 +1,1 @@
+cp -r ${BINARIES_DIR}/* /build
