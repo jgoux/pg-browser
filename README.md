@@ -12,7 +12,7 @@ In the container, copy the configuration files from the host:
 cp -r /pg-wasm/* /pg-wasm/.config .
 ```
 
-Eventually tweak the configuration and save it back to the host:
+[OPTIONAL] Eventually tweak the configuration and save it back to the host:
 
 ```bash
 make menuconfig
