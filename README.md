@@ -9,7 +9,7 @@ Run the Buildroot container:
 In the container, copy the configuration files from the host:
 
 ```bash
-cp -r /pg-wasm/* /pg-wasm/.config .
+cp -r /pg-wasm/* /pg-wasm/.config . && cp /pg-wasm/board/pg-wasm/linux.conf ./output/build/linux-5.17.15/.config
 ```
 
 [OPTIONAL] Eventually tweak the configuration and save it back to the host:
