@@ -45,4 +45,8 @@ VOLUME /build
 
 WORKDIR /root/buildroot-${BUILD_ROOT_RELEASE}
 
+COPY pg-wasm /pg-wasm
+
+RUN cp -r /pg-wasm/* /pg-wasm/.config .
+
 ENTRYPOINT ["bash"]

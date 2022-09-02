@@ -2,7 +2,7 @@ docker build -t buildroot .
 
 docker run \
     --rm \
-    --name build-v86 \
+    --name build-pg-wasm \
     -v $PWD/build:/build \
     -v $PWD/pg-wasm:/pg-wasm \
     -ti \
