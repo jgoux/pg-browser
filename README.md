@@ -30,3 +30,9 @@ Build the image and save it to the host:
 ```bash
 make
 ```
+
+# How to create a filesystem for v86 (json + .bin files)
+
+```
+sudo mkdir -p build/filesystem && sudo tools/copy-to-sha256.py build/rootfs.tar build/filesystem && sudo tools/fs2json.py --out build/filesystem/filesystem.json build/rootfs.tar
+```
