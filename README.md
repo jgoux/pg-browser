@@ -17,6 +17,9 @@ cp -r /pg-wasm/* /pg-wasm/.config .
 ```bash
 make menuconfig
 cp .config /pg-wasm/.config
+
+make linux-menuconfig
+cp output/build/linux-5.17.15/.config /pg-wasm/board/pg-wasm/linux.conf
 ```
 
 Build the image and save it to the host:
