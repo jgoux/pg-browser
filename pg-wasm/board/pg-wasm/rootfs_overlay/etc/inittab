@@ -28,14 +28,10 @@ null::sysinit:/bin/ln -sf /proc/self/fd/2 /dev/stderr
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
 
-# Put a getty on the serial port
-console::respawn:/sbin/getty -L console 0 vt100 # GENERIC_SERIAL
+console::respawn:-su -c "TERM=xterm-256color; export TERM; /sbin/hwclock -s && /bin/login -f root"
 
-# Serial tty's
-ttyS0::respawn:/bin/login -f root
-ttyS1::respawn:/bin/login -f root
-ttyS2::respawn:/bin/login -f root
-ttyS3::respawn:/bin/login -f root
+::once:echo 1 > /proc/sys/vm/drop_caches
+::once:dmesg -c > /dev/null
 
 # Stuff to do for the 3-finger salute
 #::ctrlaltdel:/sbin/reboot
