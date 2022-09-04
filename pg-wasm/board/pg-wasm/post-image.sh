@@ -5,6 +5,7 @@ mkdir rootfs
 tar -xf rootfs.tar -C rootfs
 mv bzImage rootfs
 # rm -rf filesystem*
+find rootfs -type f -iname '\.gitkeep' -delete
 chown -R 1000:1000 rootfs
 chown -R 100:101 rootfs/var/lib/pgsql
 chmod 700 rootfs/var/lib/pgsql
