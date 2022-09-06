@@ -6,6 +6,7 @@ tar -xf rootfs.tar -C rootfs
 mv bzImage rootfs
 # rm -rf filesystem*
 find rootfs -type f -iname '\.gitkeep' -delete
+rm rootfs/etc/init.d/S50postgresql
 chown -R 1000:1000 rootfs
 chown -R 100:101 rootfs/var/lib/pgsql
 chmod 700 rootfs/var/lib/pgsql
